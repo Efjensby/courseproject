@@ -33,7 +33,7 @@ ppp_boxplot <- function(data, x_var, y_var, colors, comparisons, method) {
 
   data_filtered <- subset(data, !is.na(data[[x_var]]))
   
-ggplot(data = subset(data_filtered, !is.na(x_var)), mapping = aes(x = !!sym(x_var), y = !!sym(y_var), fill = !!sym(x_var)))+ 
+ggplot(data = data_filtered, mapping = aes(x = !!sym(x_var), y = !!sym(y_var), fill = !!sym(x_var)))+ 
   geom_boxplot(outlier.shape = NA, alpha = 0.8)+ 
   geom_jitter(width = 0.2, aes(color = !!sym(x_var)), alpha = 1)+
   labs(title = paste('Plot of', y_var, 'by', x_var),
