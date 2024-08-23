@@ -7,20 +7,20 @@
 ppp_boxplot(data, x_var, y_var, colors, comparisons, method)
 }
 \arguments{
-\item{data}{data frame}
+\item{data}{The data frame containing the variables to be plotted and analyzed.}
 
-\item{x_var}{categorical variable in data}
+\item{x_var}{The categorical variable in the data frame that will be used for grouping on the x-axis.}
 
-\item{y_var}{numeric variable in data}
+\item{y_var}{The numeric variable in the data frame that will be plotted on the y-axis.}
 
-\item{colors}{character vector of color names of same length as x_var}
+\item{colors}{A character vector of color names, where the number of colors provided must match the number of unique categories in the x_var variable.}
 
-\item{comparisons}{list of groups to compare}
+\item{comparisons}{A list specifying the pairs of categories in x_var to be compared statistically.}
 
-\item{method}{statistical method}
+\item{method}{he statistical method used for comparing the groups specified in comparisons (e.g., "wilcox.test", "t.test").}
 }
 \value{
-A pretty boxplot with stats printed on the plot.
+A visually appealing, colored box plot of y_var grouped by x_var, with statistical comparisons of the specified groups (comparisons) displayed on the plot, using the specified method. The plot is customized with colors from the provided colors vector
 }
 \description{
 A function to produce box plots using ggplot2 with theme, colors and statistics.
