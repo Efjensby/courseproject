@@ -2,20 +2,20 @@
 % Please edit documentation in R/ppp.R
 \name{ppp_boxplot}
 \alias{ppp_boxplot}
-\title{Build pretty boxplots fast}
+\title{Build pretty box plots fast}
 \usage{
-ppp_boxplot(data, x_var, y_var, comparisons, colors, method)
+ppp_boxplot(data, x_var, y_var, colors, comparisons, method)
 }
 \arguments{
-\item{data}{a data frame}
+\item{data}{data frame}
 
 \item{x_var}{categorical variable in data}
 
 \item{y_var}{numeric variable in data}
 
-\item{comparisons}{list of groups to compare}
+\item{colors}{character vector of color names of same length as x_var}
 
-\item{colors}{character vector of color names for x_var}
+\item{comparisons}{list of groups to compare}
 
 \item{method}{statistical method}
 }
@@ -23,11 +23,11 @@ ppp_boxplot(data, x_var, y_var, comparisons, colors, method)
 A pretty boxplot with stats printed on the plot.
 }
 \description{
-A function to produce boxplots using ggplot2 with theme, colors and statistics.
+A function to produce box plots using ggplot2 with theme, colors and statistics.
 }
 \examples{
 my_comparisons <- list(c("female", "hermaphroditic"), c("female", "male"), c("female", "none"))
-my_colors <- c('#47B2EC','#162F82', '#608D00', '#005115')
+my_colors <- c('#e09f3e', '#9e2a2b','#540b0e', '#335c67')
 my_method = 'wilcox.test'
 ppp_boxplot(data = dplyr::starwars,
            x_var = "sex",

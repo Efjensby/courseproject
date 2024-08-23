@@ -1,13 +1,13 @@
 
-#' Build pretty boxplots fast
+#' Build pretty box plots fast
 #' 
-#' A function to produce boxplots using ggplot2 with theme, colors and statistics.
+#' A function to produce box plots using ggplot2 with theme, colors and statistics.
 #'
-#' @param data a data frame
+#' @param data data frame
 #' @param x_var categorical variable in data
 #' @param y_var numeric variable in data
 #' @param comparisons list of groups to compare
-#' @param colors character vector of color names for x_var
+#' @param colors character vector of color names of same length as x_var
 #' @param method statistical method 
 #'
 #' @return A pretty boxplot with stats printed on the plot. 
@@ -20,7 +20,7 @@
 #'
 #' @examples
 #' my_comparisons <- list(c("female", "hermaphroditic"), c("female", "male"), c("female", "none"))
-#' my_colors <- c('#47B2EC','#162F82', '#608D00', '#005115')
+#' my_colors <- c('#e09f3e', '#9e2a2b','#540b0e', '#335c67')
 #' my_method = 'wilcox.test'
 #' ppp_boxplot(data = dplyr::starwars,
 #'            x_var = "sex",
@@ -29,13 +29,13 @@
 #'            colors = my_colors,
 #'            method = my_method)
 
-ppp_boxplot <- function(data, x_var, y_var, comparisons, colors, method) { 
+ppp_boxplot <- function(data, x_var, y_var, colors, comparisons, method) { 
 
   data_filtered <- subset(data, !is.na(data[[x_var]]))
   
-ggplot(data = subset(data_filtered, !is.na(x_var)), mapping = aes_string(x = x_var, y = y_var, fill = x_var))+ 
-  geom_boxplot(outlier.shape = NA, alpha = 0.5)+ 
-  geom_jitter(width = 0.2, aes_string(color = x_var), alpha = 0.8)+
+ggplot(data = subset(data_filtered, !is.na(x_var)), mapping = aes(x = !!sym(x_var), y = !!sym(y_var), fill = !!sym(x_var)))+ 
+  geom_boxplot(outlier.shape = NA, alpha = 0.8)+ 
+  geom_jitter(width = 0.2, aes(color = !!sym(x_var)), alpha = 1)+
   labs(title = paste('Plot of', y_var, 'by', x_var),
        x = x_var,
        y = y_var,
@@ -46,3 +46,4 @@ ggplot(data = subset(data_filtered, !is.na(x_var)), mapping = aes_string(x = x_v
                      comparisons = comparisons)+
   theme_bw(base_size = 16)
 }
+
