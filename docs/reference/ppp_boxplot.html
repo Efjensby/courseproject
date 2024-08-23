@@ -45,32 +45,32 @@
 
 
 <dl><dt id="arg-data">data<a class="anchor" aria-label="anchor" href="#arg-data"></a></dt>
-<dd><p>data frame</p></dd>
+<dd><p>The data frame containing the variables to be plotted and analyzed.</p></dd>
 
 
 <dt id="arg-x-var">x_var<a class="anchor" aria-label="anchor" href="#arg-x-var"></a></dt>
-<dd><p>categorical variable in data</p></dd>
+<dd><p>The categorical variable in the data frame that will be used for grouping on the x-axis.</p></dd>
 
 
 <dt id="arg-y-var">y_var<a class="anchor" aria-label="anchor" href="#arg-y-var"></a></dt>
-<dd><p>numeric variable in data</p></dd>
+<dd><p>The numeric variable in the data frame that will be plotted on the y-axis.</p></dd>
 
 
 <dt id="arg-colors">colors<a class="anchor" aria-label="anchor" href="#arg-colors"></a></dt>
-<dd><p>character vector of color names of same length as x_var</p></dd>
+<dd><p>A character vector of color names, where the number of colors provided must match the number of unique categories in the x_var variable.</p></dd>
 
 
 <dt id="arg-comparisons">comparisons<a class="anchor" aria-label="anchor" href="#arg-comparisons"></a></dt>
-<dd><p>list of groups to compare</p></dd>
+<dd><p>A list specifying the pairs of categories in x_var to be compared statistically.</p></dd>
 
 
 <dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
-<dd><p>statistical method</p></dd>
+<dd><p>he statistical method used for comparing the groups specified in comparisons (e.g., "wilcox.test", "t.test").</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A pretty boxplot with stats printed on the plot.</p>
+    <p>A visually appealing, colored box plot of y_var grouped by x_var, with statistical comparisons of the specified groups (comparisons) displayed on the plot, using the specified method. The plot is customized with colors from the provided colors vector</p>
     </div>
 
     <div class="section level2">
