@@ -15,8 +15,6 @@ ppp_barplot(data, x_var, colors)
 }
 \value{
 pretty bar plot with counts and percentages printed on the plot.
-
-#' @import ggplot2
 }
 \description{
 A Function to produce bar plots using ggplot2 with theme, colors and counts (percentages)

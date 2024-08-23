@@ -8,8 +8,7 @@
 #'
 #' @return  pretty bar plot with counts and percentages printed on the plot. 
 #' 
-#' #' @import ggplot2
-#' @import ggpubr
+#' @import ggplot2
 #' @import dplyr
 #' 
 #' @export
